@@ -1,0 +1,9 @@
+*
+!*.py
+!.gitignore
+!README.md
+!/cache
+!/download
+!/fileMaintenance
+!/Main
+!/model
