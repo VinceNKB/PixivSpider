@@ -17,7 +17,10 @@ import urllib.parse
 
 class PixivParser:
     def __init__(self):
-        self.api = AppPixivAPI()
+        self.api = ByPassSniApi()
+        self.api.require_appapi_hosts()
+        # api.set_additional_headers({'Accept-Language':'en-US'})
+        self.api.set_accept_language('en-us')
         self.error = []
         self.store = Store()
 
@@ -340,10 +343,10 @@ if __name__ == '__main__':
     pp.load_account_config()
     pp.login_with_default_account()
 
-    #pp.get_all_my_bookmark()
+    pp.get_all_my_bookmark()
     #pp.get_my_bookmark(restrict='public', page_count=5, start_id=None)
-    #pp.fetch_following(page_count=1)
-    pp.start_trace()
+    #pp.fetch_following(page_count=2)
+    #pp.start_trace()
 
 
 
